@@ -21,12 +21,12 @@ end
     
 class HangmanGame
     def self.play_hangman
-        words = ["apple", "banana", "cherry", "date", "elderberry", "fig", "grape", "honeydew", "kiwi", "lemon"]
+        words = ["apple", "banana", "cherry", "date", "elderberry", "fig", "grape", "honeydew", "kiwi", "lemon", "watermelon", "orange", "mango"]
         loop do
             # game loop, makes empty arrays for guesses and chooses word from array
             right_guesses = []
             wrong_guesses = []
-            word = words[rand(0..9)]
+            word = words[rand(0..words.length)]
             chars_to_find = Hangman.decomp_word(word)   # character array to compare guesses
             
             count = 0
@@ -76,6 +76,8 @@ class HangmanGame
                             puts " | |"
 
                         end
+                    elsif wrong_guesses.include?(letter)
+                        puts "You have already guessed this letter."
                     end
                 end
                 if (chars_to_find - right_guesses).empty?   # determines if the word has been guessed
