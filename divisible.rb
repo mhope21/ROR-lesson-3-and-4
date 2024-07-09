@@ -47,12 +47,12 @@ module NewDivBy
 end
   
 class GetNewDivBy
-    def self.print_divby(x,y,z)
-        print NewDivBy.divby(x,y,z)
+    def self.print_divby(arr)
+        puts NewDivBy.divby(arr)
     end
 end
 
-GetNewDivBy.print_divby(2,3,5)  # valid arguments
-GetNewDivBy.print_divby(9,4,6)
-GetNewDivBy.print_divby(10,two,7)   # invalid arguments
-GetNewDivBy.print_divby(101,3,5)
+GetNewDivBy.print_divby([2,3,5])  # valid arguments
+GetNewDivBy.print_divby([9,4,6,10])
+GetNewDivBy.print_divby([10,two,7])   # invalid arguments
+GetNewDivBy.print_divby([101,3])
