@@ -1,5 +1,3 @@
-# Which is better, and is there a better way to make it so that any numbers can be put in?
-
 module DivBy
     def self.divby
       numarray = []  
