@@ -6,20 +6,16 @@ def guesser
 
         low_num = 1
         high_num = 100
-        guesses = []    # Array to hold guesses
-        
+                
         loop do # Inner loop with guessing logic
             guess = (high_num + low_num)/2  # Chooses a number in the middle of the current range
 
-            if guesses.include?(guess)  # Checks if a guess is repeated to determine if player is lying
-                puts "You have deceived me; please be truthful next time."
-                puts "These are my guesses :  #{guesses}. I know one of them is correct."
+            if high_num < low_num
+                puts "😤 Wait...you're lying to me! Please be tuthful."
                 break
-            end
+              end
             
-            guesses << guess    # Adds guess to guesses array
-
-            puts "Is the number #{guess}?"
+            puts "Is the number #{guess}? (H/L/Y)"
             response = gets.chomp.upcase
 
             # Gets responses from player to determine next guess
@@ -31,7 +27,7 @@ def guesser
                 puts "I knew I had it."
                 break
             else
-                "Please enter the appropriate response."
+                puts "Please enter the appropriate response."
             end
 
         end
